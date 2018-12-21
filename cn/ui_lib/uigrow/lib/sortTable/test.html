@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script src="uigrow.sortTable.js"></script>
+
+<title>测试前端代码专用页</title>
+
+<link rel="stylesheet" type="text/css" href="../tableStyle/uigrow.tableStyle.css" />
+
+</head>
+<style type="text/css">
+.mycss{
+	color:red;
+} 
+</style>
+<script type="text/javascript">
+function test(){
+	var obj=document.getElementsByTagName("ug");
+	
+	var tr_obj=new Object();
+	tr_obj.value="1";
+	
+	var hehe=typeof(2.22);
+	var hehe2=typeof(2);
+	var hehe3=typeof("hehe");
+	var hehe4=typeof("");
+	var hehe5=typeof(null);
+	var hehe6=parseFloat("aa");
+	var hehe6_1=isNaN(hehe6);
+	var hehe6_2=typeof(hehe6);
+	var hehe7=typeof("21");
+	var hehe8=parseFloat("23.564(asf(@#)d");
+	var hh="";
+}
+
+function test2(){
+	var table=document.getElementById("uigrow_sort_table2");
+	var tr=document.createElement("tr");
+	tr.innerHTML="<tr><td>1363.01</td><td>1544.35</td></tr>";
+	table.appendChild(tr);
+}
+
+function test3(){
+	//var mycss = document.getElementsByClassName("mycss");
+	//var interim_table=document.createElement("table");
+	var interim_table=document.getElementById("uigrow_sort_table2");
+	interim_table.className+=" mycss";
+	
+	//var table_style=
+	var hh="";
+}
+
+
+</script>
+<body>
+<P class="hehe2">1</P>
+<P class="hehe">2</P>
+<P class="hehe">3</P>
+
+<table class="uigrow_table_default uigrow_sort_table">
+	<thead>
+		<tr><td>名称</td><td>上午收入</td><td>下午收入</td></tr>
+	</thead>
+	<tbody>
+		<tr><td>absdf</td><td>3.01</td><td>15.35</td></tr>
+		<tr><td>asfd</td><td>13.01</td><td>101.35</td></tr>
+		<tr><td>zxcv</td><td>33.01</td><td>102.35</td></tr>
+		<tr><td>aberwsdf</td><td>32.01</td><td>12.35</td></tr>
+		<tr><td>dfg</td><td>23.01</td><td>10.35</td></tr>
+		<tr><td>cnvbn</td><td>53.01</td><td>107.35</td></tr>
+		<tr><td>uioy</td><td>63.01</td><td>15.35</td></tr>
+	</tbody>
+</table>
+<br/>
+
+<table class="uigrow_sort_table" id="uigrow_sort_table2">
+	<thead>
+		<tr><td>名称</td><td>上午收入</td><td>下午收入</td></tr>
+	</thead>
+	<tbody>
+		<tr><td>张三</td><td>3.01</td><td>10.35</td></tr>
+		<tr><td>李四</td><td>3.01</td><td>15.35</td></tr>
+		<tr><td>王五</td><td>13.01</td><td>101.35</td></tr>
+		<tr><td>小二</td><td>33.01</td><td>102.35</td></tr>
+		<tr><td>小明</td><td>32.01</td><td>12.35</td></tr>
+		<tr><td>红六</td><td>23.01</td><td>10.35</td></tr>
+		<tr><td>陈七</td><td>53.01</td><td>107.35</td></tr>
+		<tr><td>刘八</td><td>63.01</td><td>15.35</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><td>总计</td><td>250.68</td><td>300.66</td></tr>
+	</tfoot>
+</table>
+<br/>
+
+
+
+<div style="width:1000px;">
+<table class="asdf uigrow_sort_table sadf">
+	<thead>
+		<tr><td class="uigrow_order_by_string">编号</td><td class="uigrow_order_by_number">上午收入</td><td>下午收入</td></tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>3.01(USD)</td><td>10.35￥</td></tr>
+		<tr><td>2</td><td>3.01(USD)</td><td>15.35￥</td></tr>
+		<tr><td>3</td><td>13.01(USD)</td><td>101.35￥</td></tr>
+		<tr><td>11</td><td>33.01(USD)</td><td>102.35￥</td></tr>
+		<tr><td>14</td><td>32.01(USD)</td><td>12.35￥</td></tr>
+		<tr><td>22</td><td>23.01(USD)</td><td>10.35￥</td></tr>
+		<tr><td>33</td><td>53.01(USD)</td><td>107.35￥</td></tr>
+		<tr><td>8</td><td>63.01(USD)</td><td>15.35￥</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><td>总计</td><td>250.68</td><td>300.66</td></tr>
+	</tfoot>
+</table>
+<br/>
+
+<table class="asdf uigrow_sort_table sadf">
+	<thead>
+		<tr><td class="uigrow_order_by_string">编号</td><td class="uigrow_order_by_number">上午收入</td><td>下午收入</td></tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>$ 3.01</td><td>10.35￥</td></tr>
+		<tr><td>2</td><td>$ 3.01</td><td>15.35￥</td></tr>
+		<tr><td>3</td><td>$ 13.01</td><td>101.35￥</td></tr>
+		<tr><td>11</td><td>$ 33.01</td><td>102.35￥</td></tr>
+		<tr><td>14</td><td>$ 32.01</td><td>12.35￥</td></tr>
+		<tr><td>22</td><td>$ 23.01</td><td>10.35￥</td></tr>
+		<tr><td>33</td><td>$ 53.01</td><td>107.35￥</td></tr>
+		<tr><td>8</td><td>$ 63.01</td><td>15.35￥</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><td>总计</td><td>$ 250.68</td><td>300.66</td></tr>
+	</tfoot>
+</table>
+
+</div>
+
+<ug>hehe</ug>
+
+<script type="text/javascript">
+//var hh=checkNumber("a-1");
+//test();
+//test2();
+//test3();
+</script>
+</body>
+</html>

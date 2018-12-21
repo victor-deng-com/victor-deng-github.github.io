@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>uigrow - The plug-ins's library for growing UI</title>
+<!-- 引入的bootstrap -->
+
+<!--<script type="text/javascript" src="ui_lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="ui_lib/bootstrap-3.3.7-dist/css/modified_bootstrap.min.css" />
+
+<!-- 引入的bootstrap END -->
+
+<!-- jQuery -->
+<script src="ui_lib/jquery-3.3.1.min.js"></script>
+<!-- jQueryend -->
+
+<!-- 表格样式 -->
+<link rel="stylesheet" type="text/css" href="ui_lib/uigrow/lib/tableStyle/uigrow.tableStyle.css" />
+<script src="ui_lib/uigrow/lib/tableStyle/uigrow.tableStyle.js"></script>
+<!-- 表格样式end -->
+
+<!-- 表格排序 -->
+<script src="ui_lib/uigrow/lib/sortTable/uigrow.sortTable.js"></script>
+<!-- 表格排序end -->
+
+<!-- 分页插件 -->
+<link rel="stylesheet" type="text/css" href="ui_lib/uigrow/lib/paging/uigrow.paging.css" />
+<script src="ui_lib/uigrow/lib/paging/uigrow.paging.js"></script>
+<!-- 分页插件end -->
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/commonTool.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index/index.css" />
+
+</head>
+<style>
+
+.div_content_container_full{
+	width:100%;
+	min-height: 100%;
+}
+.left_content_container{
+	min-width:300px;
+	/*position: absolute;*/
+	border-right:1px solid #f0f2f1;
+}
+.right_content_container{
+	margin-left:10px;
+}
+.div_plug-ins_name{
+	padding-left: 100px;
+	list-style:none;
+}
+.ul_plug-ins_name{
+	list-style: none;
+    padding: 6px;
+}
+.li_plug-ins_name{
+	cursor:pointer;
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    padding: 10px 0px 10px 0px;
+	color:#525252;
+}
+
+.glyphicon-triangle-right{
+	float: right;
+	color:#868686;
+	margin-right:20px;
+	margin-top: 4px;
+}
+</style>
+<body>
+<div id="header"></div>
+
+<div class="div_content_container_full">
+	<div style="height:20px;"></div>
+	<table>
+		<tr>
+			<td style="width:20%;vertical-align: top;">
+				<div class="left_content_container">
+					<div class="div_plug-ins_name">
+						<ul class="ul_plug-ins_name">
+							<li class="li_plug-ins_name" onclick="JumpToUrl('#tableStyle')">tableStyle&nbsp;&nbsp;<span class="glyphicon glyphicon-triangle-right"></span></li>
+							<li class="li_plug-ins_name" onclick="JumpToUrl('#sortTable')">sortTable&nbsp;&nbsp;<span class="glyphicon glyphicon-triangle-right"></span></li>
+							<li class="li_plug-ins_name" onclick="JumpToUrl('#paging')">paging&nbsp;&nbsp;<span class="glyphicon glyphicon-triangle-right"></span></li>
+						</ul>
+					</div>
+				</div>
+			</td>
+			<td style="vertical-align: top;">
+				<div class="right_content_container">
+					<div>
+						<a style="font-size:x-large;line-height:1.5" id="tableStyle">tableStyle</a><span class="little_a" style="margin-left:20px;" onclick="OpenWindowToUrl('./download.html?download=tableStyle')">download<span class="glyphicon glyphicon-download-alt" style="margin-left:1px;"></span></span>
+						<br /><br />
+						<p style="margin-left:20px;">Import files：</p>
+						<p style="margin-left:40px;color:#666">uigrow.tableStyle.css<br />uigrow.tableStyle.js</p>
+						<p style="margin-left:20px;">How to use：</p>
+						<p style="margin-left:40px;color:#666">
+							Setted table class="uigrow_table_default uigrow_line_effect"<br/>
+							<br/>
+							<span style="font-size:small">If you want to refresh style , js write : uigrow_lineEffect_main();</span>
+						</p>
+						<p style="margin-left:20px;">Example：</p>
+						<p style="margin-left:40px;color:#666">&lt;table class="<span style="color:red;">uigrow_table_default uigrow_line_effect</span>"></p>
+						<p style="margin-left:50px;color:#666">&lt;thead></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>SalesmenName&lt;/td>&lt;td>SalesVolume&lt;/td>&lt;td>GrossProfit&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/thead></p>
+						<p style="margin-left:50px;color:#666">&lt;tbody></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Jack&lt;/td>&lt;td>$23886.28&lt;/td>&lt;td>$11886.28&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Tom&lt;/td>&lt;td>$26886.88&lt;/td>&lt;td>$11101.65&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Andy&lt;/td>&lt;td>$3821.85&lt;/td>&lt;td>$1102.35&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Anne&lt;/td>&lt;td>$26867.08&lt;/td>&lt;td>$11212.39&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Gloria&lt;/td>&lt;td>$5289.98&lt;/td>&lt;td>$2410.75&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Edgar&lt;/td>&lt;td>$43816.22&lt;/td>&lt;td>$19107.25&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Phoebe&lt;/td>&lt;td>$32366.68&lt;/td>&lt;td>$15215.84&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/tbody></p>
+						<p style="margin-left:50px;color:#666">&lt;tfoot></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Total&lt;/td>&lt;td>$162934.97&lt;/td>&lt;td>$72036.51&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Average&lt;/td>&lt;td>$23276.42&lt;/td>&lt;td>$10290.93&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/tfoot></p>
+						<p style="margin-left:40px;color:#666">&lt;/table></p>
+						<p style="margin-left:20px;">Effect：</p>
+						<div style="width:80%;margin-left:40px;">
+							<table class="uigrow_table_default uigrow_line_effect">
+								<thead>
+									<tr><td>SalesmenName</td><td>SalesVolume</td><td>GrossProfit</td></tr>
+								</thead>
+								<tbody>
+									<tr><td>Jack</td><td>$23886.28</td><td>$11886.28</td></tr>
+									<tr><td>Tom</td><td>$26886.88</td><td>$11101.65</td></tr>
+									<tr><td>Andy</td><td>$3821.85</td><td>$1102.35</td></tr>
+									<tr><td>Anne</td><td>$26867.08</td><td>$11212.39</td></tr>
+									<tr><td>Gloria</td><td>$5289.98</td><td>$2410.75</td></tr>
+									<tr><td>Edgar</td><td>$43816.22</td><td>$19107.25</td></tr>
+									<tr><td>Phoebe</td><td>$32366.68</td><td>$15215.84</td></tr>
+								</tbody>
+								<tfoot>
+									<tr><td>Total</td><td>$162934.97</td><td>$72036.51</td></tr>
+								<tr><td>Average</td><td>$23276.42</td><td>$10290.93</td></tr>
+								</tfoot>
+							</table>
+						</div>
+						
+						<hr style="width:90%;text-align: left;margin-left: 0;">
+					</div>
+					<div>
+						<a style="font-size:x-large;line-height:1.5" id="sortTable">sortTable</a><span class="little_a" style="margin-left:20px;" onclick="OpenWindowToUrl('./download.html?download=sortTable')">download<span class="glyphicon glyphicon-download-alt" style="margin-left:1px;"></span></span>
+						<br/><br/>
+						<p style="margin-left:20px;">Import files：</p>
+						<p style="margin-left:40px;color:#666">uigrow.sortTable.js</p>
+						<p style="margin-left:20px;">How to use：</p>
+						<p style="margin-left:40px;color:#666">
+							Setted table class="uigrow_sort_table"<br/>
+							<br/>
+							<span style="font-size:small">If you want table style ,you should set table class="uigrow_sort_table uigrow_table_default uigrow_line_effect".
+								<br/>If you want to sort by number,you should set title's td class="uigrow_order_by_number".
+							</span>
+						</p>
+						<p style="margin-left:20px;">Example：</p>
+						<p style="margin-left:40px;color:#666">&lt;table class="<span style="color:red;">uigrow_table_default uigrow_line_effect uigrow_sort_table</span>"></p>
+						<p style="margin-left:50px;color:#666">&lt;thead></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>SalesmenName&lt;/td>&lt;td class="<span style="color:red;">uigrow_order_by_number</span>">SalesVolume&lt;/td>&lt;td class="<span style="color:red;">uigrow_order_by_number</span>">GrossProfit&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/thead></p>
+						<p style="margin-left:50px;color:#666">&lt;tbody></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Jack&lt;/td>&lt;td>$23886.28&lt;/td>&lt;td>$11886.28&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Tom&lt;/td>&lt;td>$26886.88&lt;/td>&lt;td>$11101.65&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Andy&lt;/td>&lt;td>$3821.85&lt;/td>&lt;td>$1102.35&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Anne&lt;/td>&lt;td>$26867.08&lt;/td>&lt;td>$11212.39&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Gloria&lt;/td>&lt;td>$5289.98&lt;/td>&lt;td>$2410.75&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Edgar&lt;/td>&lt;td>$43816.22&lt;/td>&lt;td>$19107.25&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Phoebe&lt;/td>&lt;td>$32366.68&lt;/td>&lt;td>$15215.84&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/tbody></p>
+						<p style="margin-left:50px;color:#666">&lt;tfoot></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Total&lt;/td>&lt;td>$162934.97&lt;/td>&lt;td>$72036.51&lt;/td>&lt;/tr></p>
+						<p style="margin-left:60px;color:#666">&lt;tr>&lt;td>Average&lt;/td>&lt;td>$23276.42&lt;/td>&lt;td>$10290.93&lt;/td>&lt;/tr></p>
+						<p style="margin-left:50px;color:#666">&lt;/tfoot></p>
+						<p style="margin-left:40px;color:#666">&lt;/table></p>
+						<p style="margin-left:20px;">Effect：</p>
+						<div style="width:80%;margin-left:40px;">
+							<table class="uigrow_table_default uigrow_line_effect uigrow_sort_table">
+								<thead>
+									<tr><td>SalesmenName</td><td class="uigrow_order_by_number">SalesVolume</td><td class="uigrow_order_by_number">GrossProfit</td></tr>
+								</thead>
+								<tbody>
+									<tr><td>Jack</td><td>$23886.28</td><td>$11886.28</td></tr>
+									<tr><td>Tom</td><td>$26886.88</td><td>$11101.65</td></tr>
+									<tr><td>Andy</td><td>$3821.85</td><td>$1102.35</td></tr>
+									<tr><td>Anne</td><td>$26867.08</td><td>$11212.39</td></tr>
+									<tr><td>Gloria</td><td>$5289.98</td><td>$2410.75</td></tr>
+									<tr><td>Edgar</td><td>$43816.22</td><td>$19107.25</td></tr>
+									<tr><td>Phoebe</td><td>$32366.68</td><td>$15215.84</td></tr>
+								</tbody>
+								<tfoot>
+									<tr><td>Total</td><td>$162934.97</td><td>$72036.51</td></tr>
+								<tr><td>Average</td><td>$23276.42</td><td>$10290.93</td></tr>
+								</tfoot>
+							</table>
+						</div>
+						<hr style="width:90%;text-align: left;margin-left: 0;">
+					</div>
+					<div>
+						<a style="font-size:x-large;line-height:1.5" id="paging">paging</a><span class="little_a" style="margin-left:20px;" onclick="OpenWindowToUrl('./download.html?download=paging')">download<span class="glyphicon glyphicon-download-alt" style="margin-left:1px;"></span></span>
+						<br/><br/>
+						<p style="margin-left:20px;">Import files：</p>
+						<p style="margin-left:40px;color:#666">uigrow.paging.css<br/>uigrow.paging.js</p>
+						<p style="margin-left:20px;">How to use：</p>
+						<p style="margin-left:40px;color:#666">
+							write a div in html and put a id,then write a paging object,last use function uigrow_paging(pagingObject,id);
+							<br/><br/><span style="font-size:small">If you want ajax update content,you can build function uigrow_paging_customJumpToThePage(pagingObject,jumpPage),if have function name uigrow_paging_customJumpToThePage,it will use that as ajax entry.</span>
+						</p>
+						<p style="margin-left:20px;">Example：</p>
+						<p style="margin-left:40px;color:#666">&lt;div id="div_paging">&lt;/div></p>
+						<p style="margin-left:40px;color:#666">&lt;script type="text/javascript"></p>
+						
+						<p style="margin-left:60px;color:#666">paging();</p>
+						<p style="margin-left:60px;color:#666">function paging(){</p>
+						<p style="margin-left:80px;color:#666">var pagingObject={</p>
+						<p style="margin-left:100px;color:#666">currentPage:12,</p>
+						<p style="margin-left:100px;color:#666">totalPage:18,</p>
+						<p style="margin-left:100px;color:#666">totalRecords:81,</p>
+						<p style="margin-left:100px;color:#666">language:"English",</p>
+						<p style="margin-left:100px;color:#666">style:"simple",/*defalut not simple,you can try and look*/</p>
+						<p style="margin-left:100px;color:#666">/*//default，you can change this</p>
+						<p style="margin-left:100px;color:#666">dataCountTextFormer:"total",</p>
+						<p style="margin-left:100px;color:#666">dataCountTextLatter:"data",*/</p>
+						<p style="margin-left:100px;color:#666">hrefFormer:"test",</p>
+						<p style="margin-left:100px;color:#666">hrefLatter:".html"</p>
+						<p style="margin-left:100px;color:#666">};</p>
+						<p style="margin-left:80px;color:#666">var id="div_paging";</p>
+						<p style="margin-left:80px;color:#666">uigrow_paging(pagingObject,id);</p>
+						<p style="margin-left:60px;color:#666">}</p>
+						<p style="margin-left:60px;color:#666">/*//this use to ajax update</p>
+						<p style="margin-left:60px;color:#666">function uigrow_paging_customJumpToThePage(pagingObject,jumpPage){</p>
+						<p style="margin-left:80px;color:#666">pagingObject.currentPage=parseInt(jumpPage);</p>
+						<p style="margin-left:80px;color:#666">//Refresh paging</p>
+						<p style="margin-left:80px;color:#666">uigrow_paging(pagingObject,id);</p>
+						<p style="margin-left:60px;color:#666">}*/</p>
+						<p style="margin-left:40px;color:#666">&lt;/script></p>
+						<p style="margin-left:20px;">Effect：</p>
+						<div id="div_paging"></div>
+
+<script type="text/javascript">
+	paging();
+	function paging(){
+		var pagingObject={
+			currentPage:12,
+			totalPage:18,
+			totalRecords:81,
+			language:"English",
+			style:"simple",
+			/*
+			//默认，可改变
+			dataCountTextFormer:"总计",
+			dataCountTextLatter:"数据",*/
+			
+			/*hrefFormer:"hrefFormer",
+			hrefLatter:"hrefLatter"*/
+			
+			/*hrefFormer:"https://Workspace/uigrow/lib/paging/test",
+			hrefLatter:".html"*/
+			
+			hrefFormer:"test",
+			hrefLatter:".html"
+			/*,
+			getLink: function(n){
+					return this.hrefFormer + n + this.hrefLatter;
+				}*/
+			};
+		
+		var id="div_paging";
+		
+		uigrow_paging(pagingObject,id);
+	}
+	
+	/*
+	//这里用于分页调用ajax更新
+	function uigrow_paging_customJumpToThePage(pagingObject,jumpPage){
+		pagingObject.currentPage=parseInt(jumpPage);
+		//刷新分页插件
+		uigrow_paging(pagingObject,id);
+	}
+	*/
+</script>
+						<hr style="width:90%;text-align: left;margin-left: 0;">
+					</div>
+					
+					<div>
+					<p>More plug-ins,please look forward to...</p>
+					</div>
+					
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="footer"></div>
+
+<script>
+$(function(){
+	$('#header').load('header.html');
+	$('#footer').load('footer.html');
+});
+</script>
+</body>
+</html>
